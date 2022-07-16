@@ -12,7 +12,7 @@ namespace EshopApi.Models
         }
 
         public int CustomerId { get; set; }
-        [Required(ErrorMessage = "Please Enter FirstName")]
+        [Required(ErrorMessage = "Enter FirstName")]
         [StringLength(50)]
         public string FirstName { get; set; }
         [Required]

@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EshopApi.Contract;
+using EshopApi.Repository;
 
 namespace EshopApi
 {
@@ -31,6 +33,7 @@ namespace EshopApi
             {
                 options.UseSqlServer("Data Source=.;Initial Catalog=EshopApi_DB;Integrated Security=True;");
             });
+            services.AddTransient<ICustomerRepository,CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
