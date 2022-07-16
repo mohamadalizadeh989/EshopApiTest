@@ -1,0 +1,12 @@
+protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=EshopApi_DB;Integrated Security=True;");
+            }
+        }
+
+
+http://localhost:45998/Home/Index
+
+http://localhost:45998/api/values
