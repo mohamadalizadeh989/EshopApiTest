@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EshopApi.Contract;
+using EshopApi.Contracts;
 using EshopApi.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EshopApi.Repository
+namespace EshopApi.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using EshopApi.Contract;
+using EshopApi.Contracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace EshopApi.Controllers
@@ -31,7 +31,7 @@ namespace EshopApi.Controllers
                 StatusCode = (int)HttpStatusCode.OK
             };
             Request.HttpContext.Response.Headers.Add("X-Count", _customerRepository.CountCustomer().ToString());
-            Request.HttpContext.Response.Headers.Add("X-Name", "Iman Madaeny");
+            Request.HttpContext.Response.Headers.Add("X-Name", "Mohammad Alizadeh");
 
             return result;
         }

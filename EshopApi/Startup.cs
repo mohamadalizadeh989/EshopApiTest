@@ -11,8 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EshopApi.Contract;
-using EshopApi.Repository;
+using EshopApi.Contracts;
+using EshopApi.Repositories;
 
 namespace EshopApi
 {

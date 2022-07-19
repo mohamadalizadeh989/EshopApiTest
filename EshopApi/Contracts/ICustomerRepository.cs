@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using EshopApi.Models;
 
-namespace EshopApi.Contract
+namespace EshopApi.Contracts
 {
     public interface ICustomerRepository
     {
