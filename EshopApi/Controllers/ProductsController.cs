@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using EshopApi.Models;
-using Microsoft.AspNetCore.Identity.UI.Pages.Internal.Account.Manage;
 
 namespace EshopApi.Controllers
 {

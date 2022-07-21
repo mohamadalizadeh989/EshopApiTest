@@ -4,9 +4,8 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.TestHost;
-using Microsoft.EntityFrameworkCore.Storage;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace EshopApi.Test
 {
@@ -28,6 +27,16 @@ namespace EshopApi.Test
             var request=new HttpRequestMessage(new HttpMethod("Get"),"/Api/Customers");
             var response = _client.SendAsync(request).Result;
             
+            Assert.AreEqual(HttpStatusCode.OK,response.StatusCode);
+        }
+
+        [TestMethod]
+        [DataRow(1)]
+        public void CustomerGetOneTest(int id)
+        {
+            var request = new HttpRequestMessage(new HttpMethod("Get"), $"/Api/Customers/{id}");
+            var response = _client.SendAsync(request).Result;
+
             Assert.AreEqual(HttpStatusCode.OK,response.StatusCode);
         }
 
