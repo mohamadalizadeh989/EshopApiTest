@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using EshopApi.Contracts;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace EshopApi.Controllers
 {
@@ -22,6 +23,7 @@ namespace EshopApi.Controllers
         }
 
         [HttpGet]
+        [ResponseCache(Duration = 60)]
         public IActionResult GetCustomer()
         {
 

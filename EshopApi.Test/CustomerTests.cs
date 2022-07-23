@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Security.Permissions;
 using System.Text;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
@@ -40,5 +41,13 @@ namespace EshopApi.Test
             Assert.AreEqual(HttpStatusCode.OK,response.StatusCode);
         }
 
+        [TestMethod]
+        public void CustomerPostTest()
+        {
+            var request=new HttpRequestMessage(new HttpMethod("Post"),"/Api/Customers" );
+            var response = _client.SendAsync(request).Result;
+
+            Assert.AreEqual(HttpStatusCode.UnsupportedMediaType, response.StatusCode);
+        }
     }
 }

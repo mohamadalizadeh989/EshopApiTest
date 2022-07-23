@@ -5,18 +5,20 @@ using System.Threading.Tasks;
 using EshopApi.Contracts;
 using EshopApi.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace EshopApi.Repositories
 {
     public class CustomerRepository : ICustomerRepository
     {
         private EshopApi_DBContext _context;
+        private IMemoryCache _cache;
 
-        public CustomerRepository(EshopApi_DBContext context)
+        public CustomerRepository(EshopApi_DBContext context,IMemoryCache cache)
         {
             _context = context;
+            _cache = cache;
         }
-
 
         public IEnumerable<Customer> GetAll()
         {
@@ -32,6 +34,7 @@ namespace EshopApi.Repositories
 
         public async Task<Customer> Find(int id)
         {
+
             return await _context.Customer.Include(c => c.Orders).SingleOrDefaultAsync(c => c.CustomerId == id);
         }
 
